@@ -13,7 +13,7 @@ RUN npm install
 COPY . ./
 
 # Build application
-RUN npm install
+# No build command specified
 
 # Expose port
 EXPOSE 3000
