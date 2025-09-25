@@ -1,6 +1,8 @@
 FROM node:14-alpine
 WORKDIR /app
 
+RUN apk add --no-cache python3 make g++
+
 # Copy package files from root path
 COPY ./package*.json ./
 
@@ -11,7 +13,7 @@ RUN npm install
 COPY . ./
 
 # Build application
-RUN npm run build
+RUN npm install
 
 # Expose port
 EXPOSE 3000
